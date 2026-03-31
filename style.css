@@ -7,7 +7,7 @@
 
 /* Base page styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Public Sans, sans-serif;
   background-color: #f1f1f1;
   padding: 20px;
 }
@@ -29,9 +29,9 @@ body {
 }
 
 h1 {
-  font-family: Verdana, sans-serif;
+  font-family: Public Sans, sans-serif;
   font-weight: bold;
-  color: #212121;
+  color: black;
 }
 
 /* Logo */
@@ -53,7 +53,7 @@ h1 {
 /* Inputs and buttons */
 input[type="date"],
 button {
-  font-family: Arial, sans-serif;
+  font-family: monospace, sans-serif;
   font-weight: normal;
   color: #666;
   padding: 10px 15px;
@@ -66,12 +66,12 @@ button {
 
 /* Button specific */
 button {
-  background-color: #d3d3d3;
-  color: black;
+  background-color: #0032A0;
+  color: white;
   cursor: pointer;
 }
 button:hover {
-  background-color: #bfbfbf;
+  background-color: #01236b;
 }
 
 /* Stack horizontally on wider screens */
@@ -98,6 +98,8 @@ button:hover {
 
 /* Gallery items */
 .gallery-item {
+  
+  font-family: public sans, sans-serif;
   flex: 1 1 100%;  /* full width by default */
   min-width: 280px;
   max-width: 500px;
@@ -108,6 +110,13 @@ button:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Three columns on wider screens */
@@ -130,6 +139,15 @@ button:hover {
   font-size: 14px;
 }
 
+/* Image date styling */
+.image-date {
+  font-family: monospace, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #0032A0;
+  margin-top: 8px !important;
+}
+
 /* Placeholder content */
 .placeholder {
   flex: 1 1 100%;
@@ -141,4 +159,96 @@ button:hover {
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Modal styles */
+.modal {
+  font-family: Public Sans, sans-serif;
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  overflow: auto;
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Animation for modal appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close button (X) */
+.close-button {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+}
+
+/* Modal image */
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+/* Modal details section */
+.modal-details {
+  text-align: left;
+}
+
+.modal-details h2 {
+  color: #212121;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.modal-date {
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.modal-explanation {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: justify;
 }

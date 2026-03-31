@@ -16,13 +16,31 @@
     <div class="filters">
       <input type="date" id="startDate" />
       <input type="date" id="endDate" />
-      <button>Get Space Images</button>
+      <button id="loadButton">Get Space Images</button>
     </div>
 
     <div id="gallery" class="gallery">
       <div class="placeholder">
         <div class="placeholder-icon">🔭</div>
         <p>Select a date range and click "Get Space Images" to explore the cosmos!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for displaying full image details -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <!-- Close button -->
+      <span class="close-button">&times;</span>
+      
+      <!-- Modal image -->
+      <img id="modalImage" src="" alt="" class="modal-image" />
+      
+      <!-- Modal details -->
+      <div class="modal-details">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDate" class="modal-date"></p>
+        <p id="modalExplanation" class="modal-explanation"></p>
       </div>
     </div>
   </div>
